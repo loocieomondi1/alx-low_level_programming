@@ -1,52 +1,33 @@
 #include "main.h"
 
 /**
- * print_number - prints an integer
- * n: integer
- * Return: void
+ * print_number - prints number
+ * @n: the number to process.
+ *
  */
-
-int _pow(int, int);
 void print_number(int n)
 {
-	int a, b, c, d, e;
-	
+	unsigned int num;
+
+	if (n < 10 && n >= 0)
+	{
+		_putchar('0' + n);
+		return;
+	}
 	if (n < 0)
 	{
-		n = -n;
+		num = -n;
 		_putchar('-');
 	}
-
-	e = n;
-	for (a = 1; e % 10 != e ;a++)
+	else
 	{
-		e = e / 10;
+		num = n;
 	}
-	
-	for (b = a - 1; b > 0; b--)
-	{
-		c = _pow(10, b);
-		d = n / c;
-		n = n % c;
-		_putchar(d + '0');
-	}
-	
-	_putchar(n + '0');
-	_putchar('\n');
 
+	if (num >= 10)
+	{
+		print_number(num / 10);
+	}
+	_putchar('0' + (num % 10));
 }
-int _pow(int a, int b)
-{
-	int result, c;
-
-	result = 1;
-
-	for (c = b; c > 0; c--)
-	{
-		result = result * a;
-	}
-	return (result);
-}	
-
-
 
