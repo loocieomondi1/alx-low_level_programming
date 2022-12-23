@@ -1,48 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * rot13 - encodes a string
- * str: string to be encoded
- * Return: string
+ * rot13 - function that encodes a string using rot13.
+ * @s: string to encode
+ *
+ * Return: a pointer to sear
  */
-
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	char a_z[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int len, a, b;
+	int i = 0;
 
-	for (len = 0; str[len] != '\0'; len++)
+	while (s[i] != '\0')
 	{
-		if(
-			for  (b = 0; b < 26; b++)
-			{
-				str[len] = str[len] + 13	
-			}
-	}
-
-/**
-	for (len = 0; str[len] != '\0'; len++)
-	{
-	}
-	printf("%d\n", len); 
-	for (a = 0; a < len; a++)
-	{
-		for (b = 0; b < 27; b++)
+		while (((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M')))
 		{
-		if (str[a] == a_z[b])
-			{
-				while (b < 14 && b > 0 || b > 26 && b < 40 ){
-					str[a] = str[a] + 13;
-					break;
-				}
-				while (b > 13 && b < 27 || b > 40 && b < 53){
-					str[a] = str[a] - 13;
-					break;
-				}
-			}
+			s[i] += 13;
+			i++;
 		}
+		if ((s[i] >=  'n' && s[i] <= 'z') || (s[i] >=  'N' && s[i] <= 'Z'))
+			s[i] -= 13;
+		i++;
 	}
-	
-	return (str);
-*/
-	}
+	return (s);
+}
