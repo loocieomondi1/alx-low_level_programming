@@ -1,5 +1,15 @@
+#ifndef _MAIN_H_
 #define _MAIN_H_
 #include <stdio.h>
+
+/**
+ * File: main.h
+ * Auth: loocie
+ * Desc: Header file containing prototypes for all functions
+ *       used in the 0x07-pointers_arrays_strings directory.
+ */
+
+
 char *_memset(char *s, char b, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strchr(char *s, char c);
