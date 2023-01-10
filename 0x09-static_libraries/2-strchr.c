@@ -11,12 +11,12 @@
 
 char *_strchr(char *s, char c)
 {
-	int index;
+	int a;
 
-	for (index = 0; s[index] >= '\0'; index++)
+	for (a = 0; a  >= '\0'; a++)
 	{
-		if (s[index] == c)
-			return (s + index);
+		if (a == c)
+			return (s + a);
 	}
 
 	return ('\0');
